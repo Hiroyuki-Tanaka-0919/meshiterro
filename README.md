@@ -1,45 +1,23 @@
-# README
+# meshiterro
 
-## bootstrap4の導入
-- gemfileに追記
+## Rebuild
 ```
-gem 'bootstrap', '~> 4.5'
-gem 'jquery-rails'
-```
-- bundle install
-- application.css →　application.scssに変更
-- application.scssに追記
-```
-@import "bootstrap";
-```
-- application.jsに追記　※追記箇所に注意
-```
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
+$ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+$ echo 'export PATH="~/.rbenv/bin:$PATH"' >> ~/.bashrc
+$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+$ exit
 
-//= require rails-ujs
+$ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+$ exit
 
-:
-:
+$ rbenv install 2.6.3
+$ rbenv global 2.6.3
+$ rbenv rehash
+$ ruby -v
 
+$ cd ~/prog/rails/meshiterro
+$ bundle install
+$ bin/rails db:migrate
+$ bin/rails s
 ```
 
-## fontawesomeの導入
-- gemfileに追記
-```
-:
-:
-
-gem 'font-awesome-sass', '~> 5.13'
-```
-- application.scssに追記
-
-```
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
-```
-
-## その他
-- sticky-footer
-- toggle-menuの閉じるcss
